@@ -51,3 +51,26 @@ web server."
 ## Release 1: Estimate
 
 Estimate how long it will take to build these components.
+
+_After big group session_
+
+## Release 2: Revisions
+
+Thanks to a meeting by your beloved tech lead and the client, we have revised
+and clarified the requirements:
+
+* Build an API server that works to record the events as described
+* Build a console based app that can be used to push events to the server
+  (mimic an iOS app)
+* Build a JavaScript based app that's pretty that consumes data from the
+  endpoint.  It should be Ajaxy and cool.
+* Build a Gem that encapsulates the algorithmic logic
+
+The API server should be tested by controller and unit tests, the algorithm gem
+should be tested by unit tests.  As a hint, you probably will want to use
+`FactoryGirl` and `RSpec`.
+
+**DO NOT COPY THE SKELETON FROM PHASE 2**
+
+You **may** use it as reference, but this is a chance to test what you _really_
+know.  Don't cheat yourself this diagnostic.
