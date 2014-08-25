@@ -1,0 +1,33 @@
+source 'https://rubygems.org'
+ruby '2.0.0'
+
+##sinatra
+gem 'sinatra'
+
+
+##postgresql
+gem 'pg'
+
+##activerecord
+gem 'activesupport', '~>4.1'
+gem 'activerecord', '~>4.1'
+
+
+##other important stuff
+gem 'rake'
+
+gem 'shotgun'
+
+
+##testing
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'rack-test'
+  gem 'rspec'
+end
+
+group :test, :development do
+  gem 'factory_girl'
+  gem 'faker'
+end
