@@ -1,8 +1,8 @@
-<h3>Up Voted Genres</h3>
+<h3>Down Voted Genres</h3>
 <ul>
   <% votes.each do |key, value| %>
     <li>
-      <%=key%>: <%=value%>
+      <%=key%>: -<%=value%>
     </li>
   <% end %>
 </ul>
