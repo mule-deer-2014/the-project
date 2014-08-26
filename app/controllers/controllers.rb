@@ -57,86 +57,62 @@ end
   get '/api/users/:id' do
     user_id = params[:id]
     user = User.find(user_id)
-    ap "Id: #{user.id}, Name: #{user.name}" 
-    # Change above to a json object
+    content_type :json
+    ap user.to_json
   end
+  # put below in js app
+    # ap "Id: #{user.id}, Name: #{user.name}" 
 
   get '/api/users' do 
     users = User.all 
-    users.each do |user|
-        ap "Id: #{user.id}, Name: #{user.name}"
-        # Change above to a json object'
-    end
+    content_type :json 
+    ap users.to_json
   end
+  # Put below in js app.
+    # users.each do |user|
+    #     ap "Id: #{user.id}, Name: #{user.name}"
+    #     # Change above to a json object'
+    # end
 
 # SONGS
   get '/api/songs/:id' do
     song_id = params[:id]
     song = Song.find(song_id)
-    ap "Id: #{song.id}, Title: #{song.title}" 
-    # Output Genre via genre_id as well.
-    # Change above to a json object
+    content_type :json
+    song.to_json
   end 
 
   get '/api/songs' do 
     songs = Song.all 
-    songs.each do |song|
-      ap "Id: #{song.id}, Title: #{song.title}"
-      # Output Genre via genre_id as well.    
-      # Change above to a json object
-    end
+    content_type :json
+    songs.to_json
   end  
 
 # GENRES
   get '/api/genres/:id' do
     genre_id = params[:id]
     genre = Genre.find(genre_id)
-    ap "Id: #{genre.id}, Name: #{genre.name}" 
-    # Change above to a json object
+    content_type :json
+    genre.to_json
   end
 
   get '/api/genres' do 
     genres = Genre.all 
-    genres.each do |genre|
-      ap "Id: #{genre.id}, Name: #{genre.name}"
-      # Change above to a json object
-    end
+    content_type :json
+    genres.to_json
   end  
 
 # VOTES
   get '/api/votes/:id' do
     vote_id = params[:id]
     vote = Vote.find(vote_id)
-    ap "Id: #{vote.id}, User Id: #{vote.user_id},  Song Id: #{vote.song_id}, Votes: #{vote.votes}" 
-    # Change above to a json object
+    content_type :json
+    vote.to_json
   end
 
   get '/api/votes' do 
     users = Vote.all 
-    users.each do |vote|
-      ap "Id: #{vote.id}, User Id: #{vote.user_id},  Song Id: #{vote.song_id}, Votes: #{vote.votes}" 
-      # Change above to a json object
-    end
+    content_type :json
+    users.to_json
   end
 
-
-#EXAMPLE ROUTES FOR NON-API
-# get '/users/new' do 
-#   puts 'Please enter a new name'
-#   user_input = gets.chomp
-#   User.create(name: user_input)
-# end
-
-# get '/users' do
-#   puts 'this is displays all users'
-#   users = User.all
-#   users.each do |user|
-#     puts "Id: #{user.id}, Name: #{user.name}"
-#   end
-# end
-
-# get '/users/:id' do
-#   user_id = params[:id] 
-#   user = User.find(user_id)
-#   puts "Id: #{user.id}, Name: #{user.name}"
-# end
