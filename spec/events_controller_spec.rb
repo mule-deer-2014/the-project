@@ -65,5 +65,16 @@ describe 'Events Controller' do
       expect(Vote.last.up_vote).to eq(true)
       expect(Vote.last.down_vote).to eq(nil)
     end
+
+    it "should record an down_vote" do
+      #arrange
+      song = Song.create(title: "YOLO", song_id: 24)
+      user = User.create(name: "Yohan", gender: "male")
+
+      post "/votes", {user_id: user.id, song_id: song.song_id, genres: ["rock", "punk-rock"], down_vote: true}
+
+      expect(Vote.last.up_vote).to eq(nil)
+      expect(Vote.last.down_vote).to eq(true)
+    end
   end
 end
