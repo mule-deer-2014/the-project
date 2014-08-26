@@ -1,25 +1,25 @@
 require 'factory_girl'
 require 'faker'
 
-FactoryGirl.define do 
-  
-  factory :user do 
+FactoryGirl.define do
+
+  factory :user do
     name {Faker::Name.name}
   end
 
-  factory :song do 
+  factory :song do
     title {Faker::Lorem.sentence}
-    genre_id
+    genre
   end
 
-  factory :genre do 
+  factory :genre do
     name {Faker::Lorem.sentence}
   end
 
-  factory :vote do 
-    user_id
-    song_id
-    votes
+  factory :vote do
+    votes {(1..10).to_a.sample}
+    song
+    user
   end
 
 end

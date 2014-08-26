@@ -14,16 +14,17 @@ require'awesome_print'
 # end
 
 # ROUTES
-get '/' do 
+get '/' do
   redirect '/api'
 end
 
-get '/api' do 
+get '/api' do
   ap 'Hello user!', options = {:color => {:string => :pale}}
   ap 'Welcome to our API!',  options = {:color => {:string => :greenish}}
   ap 'Please enter a command...', options = {:color => {:string => :purple}}
   ap ["select_user", "all_users", "select_song", "all_songs", "select_genre", "all_genres", "select_vote", "all_votes"],  options = {:color => {:string => :redish}}
   admin_input = gets.chomp
+  # puts admin_input
   case admin_input
     when 'select_user'
       ap 'Please enter user_id' ,  options = {:color => {:string => :blue}}
@@ -61,11 +62,11 @@ end
     ap user.to_json
   end
   # put below in js app
-    # ap "Id: #{user.id}, Name: #{user.name}" 
+    # ap "Id: #{user.id}, Name: #{user.name}"
 
-  get '/api/users' do 
-    users = User.all 
-    content_type :json 
+  get '/api/users' do
+    users = User.all
+    content_type :json
     ap users.to_json
   end
   # Put below in js app.
@@ -80,13 +81,13 @@ end
     song = Song.find(song_id)
     content_type :json
     song.to_json
-  end 
+  end
 
-  get '/api/songs' do 
-    songs = Song.all 
+  get '/api/songs' do
+    songs = Song.all
     content_type :json
     songs.to_json
-  end  
+  end
 
 # GENRES
   get '/api/genres/:id' do
@@ -96,11 +97,11 @@ end
     genre.to_json
   end
 
-  get '/api/genres' do 
-    genres = Genre.all 
+  get '/api/genres' do
+    genres = Genre.all
     content_type :json
     genres.to_json
-  end  
+  end
 
 # VOTES
   get '/api/votes/:id' do
@@ -110,8 +111,8 @@ end
     vote.to_json
   end
 
-  get '/api/votes' do 
-    users = Vote.all 
+  get '/api/votes' do
+    users = Vote.all
     content_type :json
     users.to_json
   end
