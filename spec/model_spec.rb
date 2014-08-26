@@ -5,7 +5,7 @@ describe 'models' do
     User.destroy_all
   end
  
-  describe 'User models' do 
+  describe 'User model' do 
     it 'is valid with a name' do 
       valid_user = User.create(name: "Valid")
       expect(User.all.count).to eq(1)
@@ -15,5 +15,14 @@ describe 'models' do
       invalid_user = User.create
       expect(User.all.count).to eq(1)
     end
+  end
+
+  describe 'Vote model' do 
+  end
+
+  describe 'Song model' do 
+  end
+
+  describe 'Genre model' do 
   end
 end
