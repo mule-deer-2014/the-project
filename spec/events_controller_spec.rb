@@ -37,7 +37,7 @@ describe 'Events Controller' do
     end
   end
 
-  describe "Song Votes" do
+  describe "Votes" do
     it "Should respond ok" do
       song = Song.create(title: "YOLO", song_id: 24)
       user = User.create(name: "Yohan", gender: "male")
