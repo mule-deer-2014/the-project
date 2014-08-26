@@ -9,7 +9,7 @@ get '/users' do
 end
 
 get '/users/:id' do
-  @user = user.find(params[:id])
+  @user = User.find(params[:id])
   erb :user
 end
 
