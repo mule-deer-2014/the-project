@@ -20,6 +20,8 @@ GEM
     daemons (1.1.9)
     diff-lcs (1.2.5)
     eventmachine (1.0.3)
+    factory_girl (4.4.0)
+      activesupport (>= 3.0.0)
     i18n (0.6.11)
     json (1.8.1)
     minitest (5.4.0)
@@ -69,6 +71,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  factory_girl
   pg
   rack-test
   rspec
