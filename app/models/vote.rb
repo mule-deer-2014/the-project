@@ -7,6 +7,6 @@ class Vote < ActiveRecord::Base
   end
 
   def downvote?
-    !upvote?
+    self.vote_type == "downvote"
   end
 end

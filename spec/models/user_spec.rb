@@ -11,7 +11,7 @@ describe 'User' do
 
     @user = User.create(username: Faker::Internet.user_name)
     @song1 = Song.create(title: Faker::Lorem.word )
-    @genre1 = Genre.create(name: genres.sample)
+    @genre1 = Genre.create(name: genres.pop)
     @song1.genres << @genre1
     @song2 = Song.create(title: Faker::Lorem.word )
     @genre2 = Genre.create(name: genres.sample)
@@ -25,5 +25,13 @@ describe 'User' do
 
   it 'can return user likes' do
     expect(@user.likes).to eq({@song1.genres.first.name.to_sym => 1})
+  end
+
+  it 'can return user dislikes' do
+    expect(@user.dislikes).to eq({@song2.genres.first.name.to_sym => 1})
+  end
+
+  it 'can return user preferences' do
+    expect(@user.preferences).to eq({@song2.genres.first.name.to_sym => -1, @song1.genres.first.name.to_sym => 1})
   end
 end

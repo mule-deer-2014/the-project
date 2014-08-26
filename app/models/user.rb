@@ -33,5 +33,15 @@ class User < ActiveRecord::Base
     self.votes.select{ |vote| vote.upvote?}
   end
 
+  def downvotes
+    self.votes.select{ |vote| vote.downvote? }
+  end
 
+  def favorite
+    preferences.max_by {|genre, count| count}
+  end
+
+  def least_favorite
+    preferences.min_by {|genre, count| count}
+  end
 end
