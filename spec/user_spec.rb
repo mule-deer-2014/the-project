@@ -5,7 +5,6 @@ FactoryGirl.define do
     username "ekeric13"
     password "stargazer10"
     name "Eric Kennedy"
-    device_id "123.45.6789"
   end
 end
 
