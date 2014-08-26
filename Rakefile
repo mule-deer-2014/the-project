@@ -1,5 +1,6 @@
 require './vote_controller'
 require './config/environments'
+require 'active_support/core_ext'
 # require 'sinatra/activerecord/rake'
 
 namespace :generate do
