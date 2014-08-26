@@ -47,7 +47,6 @@ describe 'Events Controller' do
     end
 
     it "should record a vote" do
-      #arrange
       song = Song.create(title: "YOLO", song_id: 24)
       user = User.create(name: "Yohan", gender: "male")
        expect{
@@ -56,7 +55,6 @@ describe 'Events Controller' do
     end
 
     it "should record an up_vote" do
-      #arrange
       song = Song.create(title: "YOLO", song_id: 24)
       user = User.create(name: "Yohan", gender: "male")
 
@@ -67,7 +65,6 @@ describe 'Events Controller' do
     end
 
     it "should record an down_vote" do
-      #arrange
       song = Song.create(title: "YOLO", song_id: 24)
       user = User.create(name: "Yohan", gender: "male")
 
