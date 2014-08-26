@@ -10,7 +10,7 @@ user_ids.times do
 end
 
 genre_ids.times do
-  FactoryGirl.create(:genre)
+  FactoryGirl.create(:genre, :name => ["ska,metal,rap,country"].sample)
 end
 
 song_ids.times do

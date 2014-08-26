@@ -7,7 +7,7 @@ FactoryGirl.define do
   end
 
   factory :genre do
-    name ["ska,metal,rap,country"].sample
+    name nil
   end
 
   factory :song do
