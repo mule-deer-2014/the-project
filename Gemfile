@@ -4,3 +4,6 @@ gem 'sinatra-reloader'
 gem 'rspec'
 
 gem 'activerecord'
+gem 'rake'
+
+gem 'pg'
