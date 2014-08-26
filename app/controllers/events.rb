@@ -9,10 +9,10 @@ post '/songs' do
 end
 
 post '/votes' do
-  song = Song.find(params[:song_id])
-  if song
+  song = Song.where(song_id: params[:song_id])
+  if song[0]
     params[:genres].each do |genre|
-      vote = song.votes.new
+      vote = song[0].votes.new
       vote.user_id = params[:user_id]
       vote.song_id = params[:song_id]
       vote.genre_name = genre

@@ -38,37 +38,31 @@ describe 'Events Controller' do
   end
 
   describe "Votes" do
-    it "Should respond ok" do
-      song = Song.create(title: "YOLO", song_id: 24)
-      user = User.create(name: "Yohan", gender: "male")
+    before(:each) do
+      @song = Song.create(title: "YOLO", song_id: 24)
+      @user = User.create(name: "Yohan", gender: "male")
+    end
 
-      post '/votes', {user_id: user.id, song_id: song.song_id, genres: ["rock", "punk-rock"], up_vote: true}
+    it "Should respond ok" do
+      post '/votes', {user_id: @user.id, song_id: @song.song_id, genres: ["rock", "punk-rock"], up_vote: true}
       expect(last_response.status).to eq(200)
     end
 
     it "should record a vote" do
-      song = Song.create(title: "YOLO", song_id: 24)
-      user = User.create(name: "Yohan", gender: "male")
        expect{
-        post "/votes", {user_id: user.id, song_id: song.song_id, genres: ["rock", "punk-rock"], up_vote: true}
+        post "/votes", {user_id: @user.id, song_id: @song.song_id, genres: ["rock", "punk-rock"], up_vote: true}
       }.to change{Vote.count}
     end
 
     it "should record an up_vote" do
-      song = Song.create(title: "YOLO", song_id: 24)
-      user = User.create(name: "Yohan", gender: "male")
-
-      post "/votes", {user_id: user.id, song_id: song.song_id, genres: ["rock", "punk-rock"], up_vote: true}
+      post "/votes", {user_id: @user.id, song_id: @song.song_id, genres: ["rock", "punk-rock"], up_vote: true}
 
       expect(Vote.last.up_vote).to eq(true)
       expect(Vote.last.down_vote).to eq(nil)
     end
 
     it "should record an down_vote" do
-      song = Song.create(title: "YOLO", song_id: 24)
-      user = User.create(name: "Yohan", gender: "male")
-
-      post "/votes", {user_id: user.id, song_id: song.song_id, genres: ["rock", "punk-rock"], down_vote: true}
+      post "/votes", {user_id: @user.id, song_id: @song.song_id, genres: ["rock", "punk-rock"], down_vote: true}
 
       expect(Vote.last.up_vote).to eq(nil)
       expect(Vote.last.down_vote).to eq(true)
