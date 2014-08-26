@@ -38,7 +38,10 @@ describe 'Events Controller' do
 
   describe "Song Votes" do
     it "Should respond ok" do
-      post '/songs/:id'
+      song = Song.create(title: "YOLO", song_id: 24)
+      user = User.create(name: "Yohan", gender: "male")
+
+      post '/votes', {user_id: user.id, song_id: song.song_id, genres: ["rock", "punk-rock"], up_vote: true}
       expect(last_response.status).to eq(200)
     end
 
@@ -47,7 +50,7 @@ describe 'Events Controller' do
       song = Song.create(title: "YOLO", song_id: 24)
       user = User.create(name: "Yohan", gender: "male")
        expect{
-        post "/songs/#{song.song_id}", {user_id: user.id}
+        post "/votes", {user_id: user.id, song_id: song.song_id, genres: ["rock", "punk-rock"], up_vote: true}
       }.to change{Vote.count}
     end
   end
