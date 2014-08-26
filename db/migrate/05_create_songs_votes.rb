@@ -1,10 +1,10 @@
 require 'active_record'
 
-class CreateSongsVotes < ActiveRecord::Migration
+class CreateGenresSongs < ActiveRecord::Migration
   def change
-    create_table :songs_votes do |t|
+    create_table :genres_songs do |t|
+      t.integer :genre_id
       t.integer :song_id
-      t.integer :vote_id
       t.timestamps
     end
   end
