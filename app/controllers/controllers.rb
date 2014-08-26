@@ -30,7 +30,8 @@ end
 get '/api/users' do 
   users = User.all 
   users.each do |user|
-    puts "Id: #{user.id}, Name: #{user.name}"
+      puts "Id: #{user.id}, Name: #{user.name}"
+      # Change above to a json object
   end
 end
 
