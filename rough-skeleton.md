@@ -4,8 +4,6 @@ Build an API Server
   then create routes and blocks/procs for those routes
   create
 
-
-
 components:
   web server - 4 hours heroku and sinatra routes and controller
   database - 12 hours (looking up active record guide, figuring out proper associations and notation)
@@ -36,5 +34,3 @@ make a lib directory
 
   push gem to rubygems
     gem push hola-0.0.0.gem
-
-

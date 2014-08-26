@@ -21,6 +21,7 @@ gem 'shotgun'
 group :test do
   gem 'rack-test'
   gem 'rspec'
+  gem 'shoulda-matchers'
 end
 
 group :test, :development do

@@ -17,7 +17,7 @@ describe "User controller" do
       expect(last_response.body).to eq(User.all.to_json)
     end
   end
-
+## COME BACK TO ME BABY ##
   describe "GET /users/:id" do
     before do
       @user = User.create
@@ -32,6 +32,25 @@ describe "User controller" do
       get "/users/#{@user.id}"
       @user.to_json
     end
+  end
 
+  describe "POST /users" do
+    before do
+      User.destroy_all
+    end
+    it "responds successfully" do
+      post 'users'
+      expect(last_response.status).to be(200)
+    end
+
+    it "creates a new user" do
+      expect{
+        post '/users', username: 'tony'
+      }.to change{User.count}.by(1)
+    end
+  end
+
+  describe User do
+    it { should have_many(:songs).through(:votes) }
   end
 end
