@@ -122,3 +122,8 @@ namespace :db do
     end
   end
 end
+
+desc 'Start IRB with application environment loaded'
+task "console" do
+  exec 'irb -r./vote_controller -r./config/environments -r./app/models/user -r./app/models/vote'
+end
