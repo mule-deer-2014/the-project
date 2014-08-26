@@ -117,3 +117,7 @@ end
     users.to_json
   end
 
+  post '/api/songs/:id/votes' do
+    Songs.find(params[:id]).vote_type(params[:vote_type])
+  end
+
