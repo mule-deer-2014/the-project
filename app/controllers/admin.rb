@@ -4,8 +4,13 @@ get '/' do
 end
 
 get '/users' do
-  @user = User.all
+  @users = User.all
   erb :index
+end
+
+get '/users/:id' do
+  @user = user.find(params[:id])
+  erb :user
 end
 
 get '/users/:id/up_votes' do
