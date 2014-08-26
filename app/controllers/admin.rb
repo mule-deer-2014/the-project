@@ -1,6 +1,10 @@
 require 'sinatra'
-
 get '/' do
+  redirect '/users'
+end
+
+get '/users' do
+  @user = User.all
   erb :index
 end
 
