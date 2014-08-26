@@ -1,6 +1,6 @@
 ## README
 
-###API
+<h1>API Documentation</h1>
 <h2>How to get Users</h2>
 <table>
   <tbody>
@@ -12,8 +12,69 @@
       <th>GET /api/users/:id</th>
       <th>Returns select user.</th>
     </tr>
+    <tr>
+      <th>GET /api/users</th>
+      <th>Returns all users.</th>
+    </tr>
   </tbody>
 </table>
+
+<h2>How to get Songs</h2>
+<table>
+  <tbody>
+    <tr>
+      <th>Resource</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <th>GET /api/songs/:id</th>
+      <th>Returns select song.</th>
+    </tr>
+    <tr>
+      <th>GET /api/songs</th>
+      <th>Returns all songs.</th>
+    </tr>
+  </tbody>
+</table>
+
+<h2>How to get Genres</h2>
+<table>
+  <tbody>
+    <tr>
+      <th>Resource</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <th>GET /api/genres/:id</th>
+      <th>Returns select genre.</th>
+    </tr>
+    <tr>
+      <th>GET /api/genres</th>
+      <th>Returns all genres.</th>
+    </tr>
+  </tbody>
+</table>
+
+
+<h2>How to get Votes</h2>
+<table>
+  <tbody>
+    <tr>
+      <th>Resource</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <th>GET /api/votes/:id</th>
+      <th>Returns select vote.</th>
+    </tr>
+    <tr>
+      <th>GET /api/votes</th>
+      <th>Returns all votes.</th>
+    </tr>
+  </tbody>
+</table>
+
+
 
 
 ###Components
