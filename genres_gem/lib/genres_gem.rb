@@ -44,7 +44,7 @@ module GenreGem
           genre_votes[vote_data[:genre]] = 1
         end
       end
-      #possibly change later
+      #change later, this doesnt properly calculate the upvotes/downvotes ratio for every genre...
       minimum_threshold = (data.length * threshold).ceil
       genre_votes.select {|k,v| v >= minimum_threshold}.map {|k,v| k }
     end
@@ -57,17 +57,17 @@ end
 
 # database_array_of_hashes = [
 # {:user => "user1", :song => "If You Seek Amy", :genre => "Pop", :type => "downvote"},
-# {:user => "user2", :song => "MeowMix", :genre => "Rock", :type => "downvote"},
-# {:user => "user2", :song => "MeowMix", :genre => "Rock", :type => "downvote"},
+# {:user => "user2", :song => "MeowMix", :genre => "Rock", :type => "upvote"},
+# # {:user => "user2", :song => "MeowMix", :genre => "Rock", :type => "downvote"},
 
 # {:user => "user3", :song => "Living on a prayer", :genre => "Rock", :type => "upvote"},
 # {:user => "user4", :song => "Ian Bui", :genre => "Rock", :type => "upvote"},
-# {:user => "user5", :song => "Jammin Nation", :genre => "Raggae", :type => "upvote"},
-# {:user => "user5", :song => "Cypress Hill", :genre => "Rap", :type => "downvote"}
+# # {:user => "user5", :song => "Jammin Nation", :genre => "Raggae", :type => "upvote"},
+# # {:user => "user5", :song => "Cypress Hill", :genre => "Rap", :type => "downvote"}
 
 # ]
 
-# p GenreGem.most_downvotes(database_array_of_hashes)
+# # p GenreGem.most_downvotes(database_array_of_hashes)
 # p GenreGem.threshold_genres(database_array_of_hashes, 0.75)
 
 
