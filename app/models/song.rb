@@ -1,3 +1,4 @@
 class Song < ActiveRecord::Base
-  has_many :devices
+  has_many :votes
+  has_many :users
 end
