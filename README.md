@@ -1,14 +1,22 @@
 ## README
 
-In an attempt to mirror the experiences you will have a mere 3 weeks from now,
-we would like to give you a sample of what it will be like to work in the real
-world.  Below is a transcript of a discussion with our client.  It is taken
-from audio tape.  The client is moderately technical (or, *thinks* he is).
+###API
+<h2>How to get Users</h2>
+<table>
+  <tbody>
+    <tr>
+      <th>Resource</th>
+      <th>Description</th>
+    </tr>
+    <tr>
+      <th>GET /api/users/:id</th>
+      <th>Returns select user.</th>
+    </tr>
+  </tbody>
+</table>
 
-Please translate and deliver the client's request over the next several days.
 
-## Transcript
-
+###Components
 ::gesture for upvote/downvote
 ::unique device ID
 ::song table associated with genres
@@ -17,12 +25,7 @@ Please translate and deliver the client's request over the next several days.
 
 ::Store data and show via CLI (command-line interface)
 
-
-## Release 2: Revisions
-
-Thanks to a meeting by your beloved tech lead and the client, we have revised
-and clarified the requirements:
-
+###Requirements
 * Build an API server that works to record the events as described
 * Build a console based app that can be used to push events to the server
   (mimic an iOS app)
@@ -34,7 +37,3 @@ The API server should be tested by controller and unit tests, the algorithm gem
 should be tested by unit tests.  As a hint, you probably will want to use
 `FactoryGirl` and `RSpec`.
 
-**DO NOT COPY THE SKELETON FROM PHASE 2**
-
-You **may** use it as reference, but this is a chance to test what you _really_
-know.  Don't cheat yourself this diagnostic.
