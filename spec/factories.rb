@@ -15,9 +15,9 @@ FactoryGirl.define do
   end
 
   factory :vote do
-    upvote
-    downvote
-    user_id
-    song_id
+    upvote nil
+    downvote nil
+    user_id nil
+    song_id nil
   end
 end
