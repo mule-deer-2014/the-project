@@ -6,5 +6,6 @@ class CreateVotes < ActiveRecord::Migration
       v.string   :genres
 
       v.timestamps
+    end
   end
 end
