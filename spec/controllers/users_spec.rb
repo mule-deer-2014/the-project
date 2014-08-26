@@ -51,6 +51,26 @@ describe "User controller" do
   end
 
   describe User do
+    it { should have_many(:votes)}
     it { should have_many(:songs).through(:votes) }
+    it { should have_one(:profile) }
+  end
+
+  describe Song do
+    it { should belong_to(:profile) }
+    it { should have_many(:votes) }
+    it {should have_many(:users).through(:votes) }
+    it {should have_and_belong_to_many(:genres)}
+  end
+
+  describe Profile do
+    it { should belong_to(:user) }
+    it { should have_many(:songs) }
+  end
+
+  describe Genre do
+    it {should have_and_belong_to_many(:songs)}
   end
 end
+
+
