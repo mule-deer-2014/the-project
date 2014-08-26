@@ -1,4 +1,5 @@
 require 'sinatra'
+require'awesome_print'
 # I get the following error if I extrapolate admin_input from /api route. Why?
 # SystemStackError - stack level too deep: /Users/MrChan/Desktop/DBC/week_7/the-project/app/controllers/controllers.rb:5
 # def admin_input
@@ -18,14 +19,14 @@ get '/' do
 end
 
 get '/api' do 
-  puts 'Hello user!'
-  puts 'Welcome to our API!'
-  puts 'Please enter a command...'
-  puts 'select_user, all_users'
+  ap 'Hello user!', options = {:color => {:string => :pale}}
+  ap 'Welcome to our API!',  options = {:color => {:string => :greenish}}
+  ap 'Please enter a command...', options = {:color => {:string => :purple}}
+  ap "select_user, all_users",  options = {:color => {:string => :redish}}
   admin_input = gets.chomp
   case admin_input
     when 'select_user'
-      puts 'Please enter user_id'
+      ap 'Please enter user_id' ,  options = {:color => {:string => :blue}}
       user_id = gets.chomp
       redirect "/api/users/#{user_id}"
     when 'all_users'
@@ -37,20 +38,22 @@ end
 get '/api/users/:id' do
   user_id = params[:id]
   user = User.find(user_id)
-  puts "Id: #{user.id}, Name: #{user.name}"
+  ap "Id: #{user.id}, Name: #{user.name}" 
   # Change above to a json object
 end
 
 get '/api/users' do 
   users = User.all 
   users.each do |user|
-      puts "Id: #{user.id}, Name: #{user.name}"
+      ap "Id: #{user.id}, Name: #{user.name}"
       # Change above to a json object
   end
 end
 
 
-# ROUTES FOR NON-API
+
+
+#EXAMPLE ROUTES FOR NON-API
 # get '/users/new' do 
 #   puts 'Please enter a new name'
 #   user_input = gets.chomp
