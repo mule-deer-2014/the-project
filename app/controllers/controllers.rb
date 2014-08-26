@@ -1,5 +1,18 @@
 require 'sinatra'
+# I get the following error if I extrapolate admin_input from /api route. Why?
+# SystemStackError - stack level too deep: /Users/MrChan/Desktop/DBC/week_7/the-project/app/controllers/controllers.rb:5
+# def admin_input
+#  case admin_input
+#     when 'select_user'
+#       puts 'Please enter user_id'
+#       user_id = gets.chomp
+#       redirect "/api/users/#{user_id}"
+#     when 'all_users'
+#       redirect '/api/users'
+#   end
+# end
 
+# ROUTES
 get '/' do 
   redirect '/api'
 end
@@ -18,6 +31,7 @@ get '/api' do
     when 'all_users'
       redirect '/api/users'
   end
+  # admin_input <= This is the recursive? call from line 4.
 end
 
 get '/api/users/:id' do
@@ -34,6 +48,7 @@ get '/api/users' do
       # Change above to a json object
   end
 end
+
 
 # ROUTES FOR NON-API
 # get '/users/new' do 
