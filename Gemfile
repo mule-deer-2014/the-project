@@ -7,3 +7,5 @@ gem 'activerecord'
 gem 'rake'
 
 gem 'pg'
+gem 'faker'
+gem 'factory_girl'
