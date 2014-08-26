@@ -13,4 +13,8 @@ end
   5.times do
     song.votes.create(user_id: rand(1..5), genre_name: genre_samples.sample, up_vote: true, down_vote: nil)
   end
+
+  5.times do
+    song.votes.create(user_id: rand(1..5), genre_name: genre_samples.sample, up_vote: nil, down_vote: true)
+  end
 end
