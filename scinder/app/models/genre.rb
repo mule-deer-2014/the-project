@@ -1,3 +1,4 @@
 class Genre < ActiveRecord::Base
-  # Remember to create a migration!
+  has_and_belongs_to_many :upvotes
+  has_and_belongs_to_many :downvotes
 end
