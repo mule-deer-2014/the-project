@@ -7,3 +7,4 @@ class Votes < ActiveRecord::Migration
     end
   end
 end
+
