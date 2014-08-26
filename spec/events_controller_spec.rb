@@ -3,17 +3,12 @@ require 'spec_helper'
 describe 'Events Controller' do
   describe 'Create user' do
     it 'Should respond ok' do
-      #arrange
-      #act
       post '/users', {name: "Yohan", gender: "male"}
-      #assert
+
       expect(last_response.status).to eq(200)
     end
 
     it 'Should create and save new user to db' do
-      #arrange
-      #act
-      #assert
       expect{
         post '/users', {name: "Yohan", gender: "male"}
       }.to change{User.count}
@@ -23,14 +18,10 @@ describe 'Events Controller' do
   describe "Create Song" do
     it 'Should respond ok' do
       post '/songs', {title: "YOLO", song_id: 24}
-      #assert
       expect(last_response.status).to eq(200)
     end
 
     it 'Should create and save new user to db' do
-      #arrange
-      #act
-      #assert
       expect{
         post '/songs', {title: "YOLO", song_id: 24}
       }.to change{Song.count}
