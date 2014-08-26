@@ -1,7 +1,9 @@
 class Votes < ActiveRecord::Migration
   def change
-    t.integer :user_id
-    t.integer :song_id
-    t.integer :votes
+    create_table :votes do |t|
+      t.integer :user_id
+      t.integer :song_id
+      t.integer :votes
+    end
   end
 end
