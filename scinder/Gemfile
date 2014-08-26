@@ -19,6 +19,9 @@ gem 'rake'
 gem 'shotgun'
 
 
+##seeding
+gem 'factory_girl'
+
 ##testing
 
 group :test do

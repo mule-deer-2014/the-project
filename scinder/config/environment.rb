@@ -14,6 +14,7 @@ require 'active_record'
 require 'logger'
 
 require 'sinatra'
+# require 'factory_girl'
 # require "sinatra/reloader" if development?
 
 require 'erb'
