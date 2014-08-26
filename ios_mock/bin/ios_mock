@@ -1,0 +1,44 @@
+#!/usr/bin/env ruby
+# vim: set ft=ruby
+
+VALID_COMMANDS = %w/upvote downvote pupvote pdownvote/
+PERSISTENT_USER_SESSION_ID = "2ce7:5790:1003:91ad:d378:c654:baa3:4f7b"
+POST_URL = "http://localhost:9393/events"
+
+require 'factory_girl'
+require 'faker'
+require 'httparty'
+require_relative '../factories'
+
+def verify_command
+  raise ArgumentError, "Command not recognized" unless command && VALID_COMMANDS.include?(command)
+  true
+end
+
+def command
+  ARGV[0]
+end
+
+def upvote
+  FactoryGirl.attributes_for(:upvote_plural)
+end
+
+def downvote
+  FactoryGirl.attributes_for(:downvote_plural)
+end
+
+def pupvote
+  FactoryGirl.attributes_for(:upvote_plural).merge({ session_id: PERSISTENT_USER_SESSION_ID })
+end
+
+def pdownvote
+  FactoryGirl.attributes_for(:downvote_plural).merge({ session_id: PERSISTENT_USER_SESSION_ID })
+end
+
+def create_event(payload)
+  HTTParty.post POST_URL, query: payload
+end
+
+if verify_command
+  create_event(send(command.to_sym))
+end
