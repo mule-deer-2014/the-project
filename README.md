@@ -16,8 +16,8 @@ _"Yes."_
 OK right.  Yeah.  OK so I was down in Palo Alto, y'know hobnobbing with some
 VCs and what not and I heard these two dudes in line at the creamery and one of
 them said something like "You know I could totally know whether I wanted to
-date a girl if I knew what she thought of a few sound sample from my
-soundcloud.  And I was like what if we tied dating to soundcloud?
+date a girl if I knew what she thought of a few sound samples from my
+soundcloud".  And I was like what if we tied dating to soundcloud?
 
 OK so in our IOS app we play somebody 10 seconds of sound (royalty free, yo),
 so if someone likes the music they swipe left, like a downvote.  If they swipe
